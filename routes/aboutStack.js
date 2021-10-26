@@ -1,17 +1,15 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-//Custom Components:
-import Home from '../screens/home';
-import ReviewDetails from '../screens/reviewDetails';
+//Screens
+import About from '../screens/about';
 import { Header } from '../shared/header';
-import { ImageBackground } from 'react-native';
 
 const { Navigator, Screen } = createStackNavigator();
 
-export const HomeStack = ({ navigation }) => (
+export const AboutStack = ({ navigation }) => (
     <Navigator
         // headerMode='screen' //default option
-        initialRouteName='Home'
+        initialRouteName='About'
         screenOptions={{
             gestureEnabled: false,
             headerTintColor: '#444',
@@ -20,18 +18,10 @@ export const HomeStack = ({ navigation }) => (
             headerTitleAlign: 'center',
         }}>
         <Screen
-            name='Home'
-            component={Home}
+            name='About'
+            component={About}
             options={{
-                headerTitle: () => <Header title='GameZone' navigation={navigation} />,
-            }}
-        />
-
-        <Screen
-            name='Details'
-            component={ReviewDetails}
-            options={{
-                title: 'Review Details',
+                headerTitle: () => <Header title='About GameZone' navigation={navigation} />,
             }}
         />
     </Navigator>
